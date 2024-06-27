@@ -3,12 +3,14 @@ import React from "react";
 
 import TaskList from "./TaskList";
 
+import "../ComponentCSS/TaskListBox.css";
+
 import { List } from "@mui/material";
 
 const TaskListBox = () => {
   return (
     <>
-      <List>
+      <List className="taskListBox">
         <TaskList />
       </List>
     </>
