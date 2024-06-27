@@ -1,34 +1,87 @@
+//Main APP JSX
+
+//Importing of Files, Components and Other
+
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 
-import "./ComponentCSS/InputBox.css";
+import "./App.css";
 
 import InputBox from "./Component/InputBox";
 
-import Buttons from "./Component/Buttons";
+import ControlBtn from "./Component/ControlBtn";
 
 import TaskListBox from "./Component/TaskListBox";
 
 import AddTaskIcon from "@mui/icons-material/AddTask";
 
-import AssignmentOutlinedIcon from '@mui/icons-material/AssignmentOutlined';
+import AssignmentOutlinedIcon from "@mui/icons-material/AssignmentOutlined";
 
-import TaskIcon from '@mui/icons-material/Task';
+import TaskIcon from "@mui/icons-material/Task";
 
 const App = () => {
     return (
         <>
-            <InputBox className="inputTitle" placeholder={"Title"} />
+            <h1 className="mainTitle">To Do App</h1>
 
-            <InputBox className="inputDescription" placeholder={"Description"} />
+            <div className="todoApp">
+                <div className="todoControl">
+                    <div className="inputControl">
+                        <InputBox
+                            className="inputTitle"
+                            placeholder={"Add Title of New Task"}
+                        />
 
-            <Buttons className="addBtn" btnTitle={<AddTaskIcon />} />
+                        <InputBox
+                            className="inputDescription"
+                            placeholder={"Add Description of New Task"}
+                        />
+                    </div>
 
-            <Buttons className="todoBtn" btnTitle={<AssignmentOutlinedIcon />} />
+                    <ControlBtn
+                        sx={{
+                            color: "var(--themeColor)",
 
-            <Buttons className="completedBtn" btnTitle={<TaskIcon />} />
+                            "&:hover": {
+                                backgroundColor: "var(--themeBGColor)",
+                            },
+                        }}
+                        className="addBtn"
+                        btnTitle={<AddTaskIcon />}
+                        hoverTitle="Add Task"
+                    />
+                </div>
 
-            <TaskListBox />
+                <div className="todoCategory">
+                    <ControlBtn
+                        sx={{
+                            color: "var(--themeColor)",
+
+                            "&:hover": {
+                                backgroundColor: "var(--themeBGColor)",
+                            },
+                        }}
+                        className="todoBtn"
+                        btnTitle={<AssignmentOutlinedIcon />}
+                        hoverTitle="Task To Do"
+                    />
+
+                    <ControlBtn
+                        sx={{
+                            color: "var(--themeColor)",
+
+                            "&:hover": {
+                                backgroundColor: "var(--themeBGColor)",
+                            },
+                        }}
+                        className="completedBtn"
+                        btnTitle={<TaskIcon />}
+                        hoverTitle="Task Completed"
+                    />
+                </div>
+
+                <TaskListBox />
+            </div>
         </>
     );
 };
