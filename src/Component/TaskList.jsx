@@ -1,27 +1,30 @@
+// Task List JSX
+
+// Importing of Files, Components and Others
+
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 
+import "../ComponentCSS/TaskList.css";
+
 import { ListItem, ListItemText } from "@mui/material";
 
-import Buttons from "./Buttons";
+import ListBtn from "../Component/ListBtn";
 
-import DeleteIcon from "@mui/icons-material/Delete";
-
-import EditIcon from '@mui/icons-material/Edit';
-
-import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
+// TaskList Function
 
 const TaskList = () => {
     return (
         <>
-            <ListItem>
+            {/* Task Lists Elements */}
+
+            <ListItem className="taskList">
                 <ListItemText
                     primary="Title of Tasks"
                     secondary="Description of Tasks"
                 />
-                <Buttons btnTitle={<EditIcon />} />
-                <Buttons btnTitle={<DeleteIcon />} />
-                <Buttons btnTitle={<DoneRoundedIcon />} />
+
+                <ListBtn />
             </ListItem>
         </>
     );
